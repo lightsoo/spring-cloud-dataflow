@@ -1,0 +1,13 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: dataflow-monitor-prometheus
+spec:
+  storageClassName: dataflow-monitor-prometheus
+  nfs:
+    server: netapp2-node5-was
+    path: /c2_mon_k8sscdf/prometheus
+  capacity:
+    storage: 50Gi
+  accessModes:
+    - ReadWriteMany
