@@ -1,0 +1,14 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: pv-scdf-svc
+  labels:
+    type: local
+spec:
+  storageClassName: default
+  capacity:
+    storage: 50Gi
+  accessModes:
+    - ReadWriteOnce
+#  hostPath:
+#    path: "/mnt/data"
