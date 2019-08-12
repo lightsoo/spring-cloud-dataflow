@@ -27,6 +27,8 @@ spec:
                 secretKeyRef:
                   name: grafana
                   key: admin-password
+            - name: TZ
+              value: Asia/Seoul
           ports:
             - containerPort: 3000
           resources:

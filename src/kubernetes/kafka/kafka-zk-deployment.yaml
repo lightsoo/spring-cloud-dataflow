@@ -23,3 +23,5 @@ spec:
           value: "1"
         - name: ZOOKEEPER_SERVER_1
           value: kafka-zk
+        - name: TZ
+          value: Asia/Seoul

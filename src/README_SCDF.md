@@ -1,6 +1,15 @@
 ### SCDF For Kubernetes 배포 가이드
+## SCDF Version
+- https://docs.spring.io/spring-cloud-dataflow/docs/2.2.0.RELEASE/reference/htmlsingle/#preface
+
 ## Timezone 설정!!!!!!
 - 타임존을 설정해야 서울시로 운영할수 있다.
+####
+- mysql-deployment.yaml
+- kafka-deployment.yaml
+- kafka-zk-deployment.yaml
+- grafana-deployment.yaml
+- 
 
 ### MySQL
 #### 개발환경

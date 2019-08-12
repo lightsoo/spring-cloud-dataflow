@@ -19,6 +19,7 @@ spec:
           args:
             - "--config.file=/etc/prometheus/prometheus.yml"
             - "--storage.tsdb.path=/prometheus/"
+            - "--storage.tsdb.retention=2d"
           ports:
             - containerPort: 9090
           volumeMounts:
@@ -26,6 +27,9 @@ spec:
               mountPath: /etc/prometheus/
             - name: prometheus-storage-volume
               mountPath: /prometheus/
+          env:
+            - name: TZ
+              value: Asia/Seoul
       volumes:
         - name: prometheus-config-volume
           configMap:

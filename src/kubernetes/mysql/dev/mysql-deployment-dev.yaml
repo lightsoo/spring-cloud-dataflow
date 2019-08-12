@@ -20,6 +20,8 @@ spec:
               secretKeyRef:
                 key: mysql-root-password
                 name: mysql
+          - name: TZ
+            value: Asia/Seoul
         ports:
           - containerPort: 3306
             name: mysql
