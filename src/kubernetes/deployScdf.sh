@@ -7,6 +7,9 @@ echo "Start SCDF server for k8s"
 #delete all by label
 #kubectl delete all -l app=kafka
 #kubectl delete all,pvc,secrets -l app=mysql
+kubectl delete all,cm,svc,secrets -l app=grafana
+
+###########################################################################3
 
 ## MySQL
 #common
@@ -27,11 +30,11 @@ echo "Start SCDF server for k8s"
 #kubectl create -f ${projectPath}/prometheus/prometheus-serviceaccount.yaml
 
 # to deploy Prometheus
-kubectl create -f ${projectPath}/prometheus/prometheus-configmap.yaml
-kubectl create -f ${projectPath}/prometheus/prometheus-service.yaml
+#kubectl create -f ${projectPath}/prometheus/prometheus-configmap.yaml
+#kubectl create -f ${projectPath}/prometheus/prometheus-service.yaml
 
 #dev deployment.yaml
-kubectl create -f ${projectPath}/prometheus/dev/prometheus-deployment-dev.yaml
+#kubectl create -f ${projectPath}/prometheus/dev/prometheus-deployment-dev.yaml
 #prd deployment.yaml
 #kubectl create -f ${projectPath}/prometheus/prd/prometheus-deployment-prd.yaml
 
