@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: scdf-ingress
+spec:
+  rules:
+    - host: scdf.lightsoo.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: scdf-server
+              servicePort: 80
+
+# Before use ingress, set domain

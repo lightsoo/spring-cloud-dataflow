@@ -40,14 +40,14 @@ echo "Start SCDF server for k8s"
 #kubectl create -f ${projectPath}/server/auth/service-account.yaml
 
 ### Skipper
-kubectl create -f ${projectPath}/skipper/skipper-config-kafka.yaml
-kubectl create -f ${projectPath}/skipper/skipper-deployment.yaml
-kubectl create -f ${projectPath}/skipper/skipper-svc.yaml
+#kubectl create -f ${projectPath}/skipper/skipper-config-kafka.yaml
+#kubectl create -f ${projectPath}/skipper/skipper-deployment.yaml
+#kubectl create -f ${projectPath}/skipper/skipper-svc.yaml
 
-#
-#kubectl create -f ${projectPath}/server/server-config-kafka.yaml
-#kubectl create -f ${projectPath}/server/server-svc.yaml
-#kubectl create -f ${projectPath}/server/server-deployment.yaml
+# scdf-server
+#kubectl create -f ${projectPath}/server/server-config.yaml
+kubectl create -f ${projectPath}/server/server-svc.yaml
+kubectl create -f ${projectPath}/server/server-deployment.yaml
 
 #deply pod command if already pod is deployed
 #kubectl apply -f ${projectPath}/mysql/dev/mysql-deployment-dev.yaml

@@ -34,6 +34,7 @@ data:
                   default:
                     limits:
                       memory: 1024Mi
+                    imagePullPolicy: Always
       datasource:
         url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysql
         username: root

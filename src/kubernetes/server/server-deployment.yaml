@@ -28,6 +28,8 @@ spec:
             cpu: 0.5
             memory: 1024Mi
         env:
+        - name: TZ
+          value: Asia/Seoul
         - name: KUBERNETES_NAMESPACE
           valueFrom:
             fieldRef:
@@ -54,6 +56,10 @@ spec:
           # Add Maven repo for metadata artifact resolution for all stream apps
         - name: SPRING_APPLICATION_JSON
           value: "{ \"maven\": { \"local-repository\": null, \"remote-repositories\": { \"repo1\": { \"url\": \"https://repo.spring.io/libs-snapshot\"} } } }"
+        - name: SPRING_CLOUD_SCHEDULER_KUBERNETES_IMAGE_PULL_POLICY
+          value: Always
+        - name: SPRING_CLOUD_DEPLOYER_KUBERNETES_IMAGE_PULL_POLICY
+          value: Always
       initContainers:
       - name: init-mysql-wait
         image: busybox
