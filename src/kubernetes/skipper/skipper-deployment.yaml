@@ -34,6 +34,8 @@ spec:
           value: 'true'
         - name: SPRING_CLOUD_KUBERNETES_SECRETS_NAME
           value: mysql
+        - name: TZ
+          value: Asia/Seoul
       initContainers:
       - name: init-mysql-wait
         image: busybox

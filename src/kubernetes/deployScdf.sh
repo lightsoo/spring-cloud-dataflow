@@ -4,13 +4,6 @@ projectPath=${PWD}
 
 echo "Start SCDF server for k8s"
 
-#delete all by label
-#kubectl delete all -l app=kafka
-#kubectl delete all,pvc,secrets -l app=mysql
-kubectl delete all,cm,svc,secrets -l app=grafana
-
-###########################################################################3
-
 ## MySQL
 #common
 #kubectl create -f ${projectPath}/mysql/mysql-svc.yaml
@@ -39,15 +32,18 @@ kubectl delete all,cm,svc,secrets -l app=grafana
 #kubectl create -f ${projectPath}/prometheus/prd/prometheus-deployment-prd.yaml
 
 ### Grafana
-
 #kubectl create -f ${projectPath}/grafana/
-#kubectl create -f ${projectPath}/skipper/skipper-deployment.yaml
-#kubectl create -f ${projectPath}/skipper/skipper-svc.yaml
-#
-##Authorization
-#kubectl create -f ${projectPath}/server/server-roles.yaml
-#kubectl create -f ${projectPath}/server/server-rolebinding.yaml
-#kubectl create -f ${projectPath}/server/service-account.yaml
+
+#Authorization
+#kubectl create -f ${projectPath}/server/auth/server-roles.yaml
+#kubectl create -f ${projectPath}/server/auth/server-rolebinding.yaml
+#kubectl create -f ${projectPath}/server/auth/service-account.yaml
+
+### Skipper
+kubectl create -f ${projectPath}/skipper/skipper-config-kafka.yaml
+kubectl create -f ${projectPath}/skipper/skipper-deployment.yaml
+kubectl create -f ${projectPath}/skipper/skipper-svc.yaml
+
 #
 #kubectl create -f ${projectPath}/server/server-config-kafka.yaml
 #kubectl create -f ${projectPath}/server/server-svc.yaml
