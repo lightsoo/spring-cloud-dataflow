@@ -24,10 +24,3 @@ spec:
 #      targetPort: 80
 #  selector:
 #    app: scdf-server
-docker:dev
--registry.
-11stcorp.co
-m/11st-ad/
-  ad-target-
-  source:2.0
-  .1.SNAPSHOT

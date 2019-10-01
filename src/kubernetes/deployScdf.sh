@@ -2,12 +2,12 @@
 
 projectPath=${PWD}
 
-echo "Start SCDF server for k8s"
+echo "Start SCDF server for k8s" + ${projectPath}
 
 ## MySQL
 #common
 #kubectl create -f ${projectPath}/mysql/mysql-svc.yaml
-#kubectl create -f ${projectPath}/mysql/mysql-secret.yaml
+#kubectl create -f ${projectPath}/mysql/mysql-secrets.yaml
 #dev
 #kubectl create -f ${projectPath}/mysql/dev/
 #prd
@@ -44,8 +44,9 @@ echo "Start SCDF server for k8s"
 #kubectl create -f ${projectPath}/skipper/skipper-deployment.yaml
 #kubectl create -f ${projectPath}/skipper/skipper-svc.yaml
 
-# scdf-server
-#kubectl create -f ${projectPath}/server/server-config.yaml
+# [DEV] scdf-server
+#kubectl create -f ${projectPath}/mysql/mysql-secrets.yaml
+kubectl create -f ${projectPath}/server/dev/server-config-dev.yaml
 kubectl create -f ${projectPath}/server/server-svc.yaml
 kubectl create -f ${projectPath}/server/server-deployment.yaml
 

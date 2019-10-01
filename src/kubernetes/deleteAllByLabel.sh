@@ -14,3 +14,5 @@ echo "Start SCDF server for k8s"
 #kubectl delete serviceaccount scdf-sa
 
 #kubectl delete all,cm -l app=skipper
+kubectl delete all,cm -l app=scdf-server
+#kubectl delete secrets -l app=mysql
